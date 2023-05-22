@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import { Typography, Paper, Grid, Box, Link, Button, IconButton, } from '@mui/material'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import Image from 'mui-image';
 
 const intro = () => (
     <Box>
@@ -41,6 +42,7 @@ const resumeDownload = () => {
 
 const Header = () => (
     <>
+        <Box display='flex' width='100%' justifyContent='center'><Image width={200} showLoading src='/src/assets/avatar.png' style={{borderRadius: '50%'}}/></Box>
         {intro()}
         {status()}
         {socials()}

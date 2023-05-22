@@ -37,7 +37,7 @@ const ExperienceCard = (props: experienceCardProps) => {
 }
 
 const Experience = () => (
-    <Box width='100%'>
+    <Box width='100%' height='100vh'>
         <Typography fontSize='3rem' variant='h5'>experience</Typography>
         <ExperienceCard title='QTS Software Development Intern' company='RBC Capital Markets' dates='May 2023 - Aug 2023' />
         <ExperienceCard title='Game Developer (Riipen Internship)' company='EduTutor' dates='Sept 2022 - Dec 2022' />

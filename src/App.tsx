@@ -1,4 +1,4 @@
-import { Box, Container, createTheme, CssBaseline, Divider, IconButton, } from '@mui/material'
+import { Box, Button, Container, createTheme, CssBaseline, Divider, IconButton, Link, } from '@mui/material'
 import LightModeIcon from '@mui/icons-material/LightMode';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import '@fontsource/roboto/300.css';
@@ -9,6 +9,7 @@ import { ThemeProvider } from '@emotion/react';
 import { useState } from 'react';
 import Header from './components/Header';
 import Experience from './components/Experience';
+
 
 const darkTheme = createTheme({
   palette: {
@@ -29,15 +30,25 @@ function App() {
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline />
       <Container maxWidth='sm'>
-        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'flex-end' }}>
-          <IconButton onClick={() => setDarkMode(!darkMode)}>{darkMode ? <LightModeIcon /> : <DarkModeIcon /> }</IconButton>
+        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+          <Box>
+            <Link color='inherit' underline='none' href='#' component={Button}>Experience</Link>
+            <Link color='inherit' underline='none' href='#' component={Button}>Projects</Link>
+          </Box>
+          <Box>
+            <IconButton onClick={() => setDarkMode(!darkMode)}>{darkMode ? <LightModeIcon /> : <DarkModeIcon />}</IconButton>
+          </Box>
         </Box>
       </Container>
       <Container maxWidth="sm" sx={{ marginTop: '50px' }}>
-        {Header()}
-        <Divider sx={{margin: '20px 0px'}} />
+        <Box height='90vh' display='flex' alignItems='center'>
+          <Box>
+            {Header()}
+          </Box>
+        </Box>
+        <Divider sx={{ margin: '20px 0px' }} />
         {Experience()}
-        <Divider sx={{margin: '20px 0px'}} />
+        <Divider sx={{ margin: '20px 0px' }} />
       </Container>
     </ThemeProvider >
   )
