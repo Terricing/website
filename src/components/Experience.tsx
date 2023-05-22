@@ -4,11 +4,11 @@ interface experienceCardProps {
     title: string,
     company: string,
     dates: string,
-    description?: string[];
+    // description?: string[];
 }
 
 const ExperienceCard = (props: experienceCardProps) => {
-    const {title, company, dates, description} = props;
+    const {title, company, dates} = props;
 
     return (
         <Box marginTop={1.5}>
