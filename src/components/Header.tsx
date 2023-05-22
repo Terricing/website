@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { Typography, Paper, Grid, Box, createTheme, Link, Button, IconButton, } from '@mui/material'
+import { Typography, Paper, Grid, Box, Link, Button, IconButton, } from '@mui/material'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
