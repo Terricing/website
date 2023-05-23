@@ -10,7 +10,6 @@ import { useState } from 'react';
 import Header from './components/Header';
 import Experience from './components/Experience';
 
-
 const darkTheme = createTheme({
   palette: {
     mode: 'dark',
@@ -29,23 +28,27 @@ function App() {
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <CssBaseline />
+      <Box height='100vh'>
+        <Container maxWidth='md'>
+          <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+            <Box>
+              <Link color='inherit' underline='none' href='#' component={Button}>Experience</Link>
+              <Link color='inherit' underline='none' href='#' component={Button}>Projects</Link>
+            </Box>
+            <Box>
+              <IconButton onClick={() => setDarkMode(!darkMode)}>{darkMode ? <LightModeIcon /> : <DarkModeIcon />}</IconButton>
+            </Box>
+          </Box>
+        </Container>
+        <Container maxWidth="sm" sx={{ marginTop: '50px' }}>
+          <Box height='100%' display='flex' alignItems='center'>
+            <Box>
+              {Header()}
+            </Box>
+          </Box>
+        </Container>
+      </Box>
       <Container maxWidth='sm'>
-        <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-          <Box>
-            <Link color='inherit' underline='none' href='#' component={Button}>Experience</Link>
-            <Link color='inherit' underline='none' href='#' component={Button}>Projects</Link>
-          </Box>
-          <Box>
-            <IconButton onClick={() => setDarkMode(!darkMode)}>{darkMode ? <LightModeIcon /> : <DarkModeIcon />}</IconButton>
-          </Box>
-        </Box>
-      </Container>
-      <Container maxWidth="sm" sx={{ marginTop: '50px' }}>
-        <Box height='90vh' display='flex' alignItems='center'>
-          <Box>
-            {Header()}
-          </Box>
-        </Box>
         <Divider sx={{ margin: '20px 0px' }} />
         {Experience()}
         <Divider sx={{ margin: '20px 0px' }} />

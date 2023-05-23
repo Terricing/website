@@ -42,7 +42,7 @@ const resumeDownload = () => {
 
 const Header = () => (
     <>
-        <Box display='flex' width='100%' justifyContent='center'><Image width={200} showLoading src='/src/assets/avatar.png' style={{borderRadius: '50%'}}/></Box>
+        <Box display='flex' width='100%' justifyContent='center'><Image width={200} showLoading src='./assets/avatar.png' style={{borderRadius: '50%'}}/></Box>
         {intro()}
         {status()}
         {socials()}
