@@ -34,7 +34,7 @@ const socials = () => {
 }
 
 const resumeDownload = () => {
-    const resumeLink = 'src/assets/eilay_katsnelson_resume.pdf'
+    const resumeLink = '../assets/eilay_katsnelson_resume.pdf'
     return (
         <Box sx={{ marginTop: '20px', display: 'flex' }} width='100%' justifyContent='center'><Link download href={resumeLink} color='inherit' underline='none' component={Button}>download resume</Link></Box>
     )
@@ -42,7 +42,7 @@ const resumeDownload = () => {
 
 const Header = () => (
     <>
-        <Box display='flex' width='100%' justifyContent='center'><Image width={200} showLoading src='./assets/avatar.png' style={{borderRadius: '50%'}}/></Box>
+        <Box display='flex' width='100%' justifyContent='center'><Image width={200} showLoading src='../assets/avatar.png' style={{borderRadius: '50%'}}/></Box>
         {intro()}
         {status()}
         {socials()}
