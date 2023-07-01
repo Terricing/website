@@ -35,7 +35,7 @@ const socials = () => {
 }
 
 const resumeDownload = () => {
-    const resumeLink = '../../img/avatar.png'
+    const resumeLink = 'eilay_katsnelson_resume.pdf'
     return (
         <Box sx={{ marginTop: '20px', display: 'flex' }} width='100%' justifyContent='center'><Link download href={resumeLink} color='inherit' underline='none' component={Button}>download resume</Link></Box>
     )
@@ -51,7 +51,7 @@ const seeExperience = ({callback}: {callback: () => void}) => {
 
 const Header = ({scrollCallBack} : {scrollCallBack: () => void}) => (
     <>
-        <Box display='flex' width='100%' justifyContent='center'><Image width={200} showLoading src='../../img/avatar.png' style={{borderRadius: '50%'}}/></Box>
+        <Box display='flex' width='100%' justifyContent='center'><Image width={200} showLoading src='avatar.png' style={{borderRadius: '50%'}}/></Box>
         {intro()}
         {status()}
         {socials()}
