@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import { Typography, Paper, Grid, Box, Link, Button, IconButton, } from '@mui/material'
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import Image from 'mui-image';
 
 const intro = () => (
@@ -34,19 +35,28 @@ const socials = () => {
 }
 
 const resumeDownload = () => {
-    const resumeLink = '../public/img/eilay_katsnelson_resume.pdf'
+    const resumeLink = '../../img/avatar.png'
     return (
         <Box sx={{ marginTop: '20px', display: 'flex' }} width='100%' justifyContent='center'><Link download href={resumeLink} color='inherit' underline='none' component={Button}>download resume</Link></Box>
     )
 }
 
-const Header = () => (
+const seeExperience = ({callback}: {callback: () => void}) => {
+    return (
+    <Box sx={{marginTop: '40px', display: 'flex', width: '100%', justifyContent: 'center'}}>
+        <Button sx={{padding: '5px 50px'}} size='large' color='inherit' variant='outlined' onClick={callback}><KeyboardArrowDownIcon />See Experience</Button>
+    </Box>
+    )
+}
+
+const Header = ({scrollCallBack} : {scrollCallBack: () => void}) => (
     <>
-        <Box display='flex' width='100%' justifyContent='center'><Image width={200} showLoading src='../public/img/avatar.png' style={{borderRadius: '50%'}}/></Box>
+        <Box display='flex' width='100%' justifyContent='center'><Image width={200} showLoading src='../../img/avatar.png' style={{borderRadius: '50%'}}/></Box>
         {intro()}
         {status()}
         {socials()}
         {resumeDownload()}
+        {seeExperience({callback: scrollCallBack})}
     </>
 )
 

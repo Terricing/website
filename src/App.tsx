@@ -6,7 +6,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { ThemeProvider } from '@emotion/react';
-import { useState } from 'react';
+import { useRef, useState} from 'react';
 import Header from './components/Header';
 import Experience from './components/Experience';
 
@@ -24,6 +24,11 @@ const lightTheme = createTheme({
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
+  const experienceRef = useRef<HTMLDivElement>(null);
+
+  const onExperienceButtonClick = () => {
+    experienceRef?.current?.scrollIntoView({behavior: "smooth"});
+  }
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
@@ -32,7 +37,7 @@ function App() {
         <Container maxWidth='md'>
           <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
             <Box>
-              <Link color='inherit' underline='none' href='#' component={Button}>Experience</Link>
+              <Link color='inherit' underline='none' onClick={onExperienceButtonClick} component={Button}>Experience</Link>
               <Link color='inherit' underline='none' href='#' component={Button}>Projects</Link>
             </Box>
             <Box>
@@ -43,14 +48,16 @@ function App() {
         <Container maxWidth="sm" sx={{ marginTop: '50px' }}>
           <Box height='100%' display='flex' alignItems='center'>
             <Box>
-              {Header()}
+              <Header scrollCallBack={onExperienceButtonClick}/>
             </Box>
           </Box>
         </Container>
       </Box>
       <Container maxWidth='sm'>
         <Divider sx={{ margin: '20px 0px' }} />
-        {Experience()}
+        <div ref={experienceRef}>
+          <Experience />
+        </div>
         <Divider sx={{ margin: '20px 0px' }} />
       </Container>
     </ThemeProvider >
